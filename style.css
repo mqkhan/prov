@@ -1,0 +1,8 @@
+#posts {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+}
+
+p {
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+}
