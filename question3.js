@@ -17,7 +17,13 @@ function calculateTotalPrice(shoppingCart) {
   // Din kod här
   // let result = null;
 
-  let sum = shoppingCart.map((el) => el.price).reduce((a, b) => a + b);
+  let sum = shoppingCart
+    .map((el) => {
+      return el.price;
+    })
+    .reduce((a, b) => {
+      return a + b;
+    });
   return sum;
 }
 

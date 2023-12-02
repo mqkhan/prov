@@ -21,9 +21,13 @@ const shoppingCart = [
 function calculateTotalPrice2(shoppingCart, prices) {
   // Din kod här
 
-  const totalPrice = shoppingCart.map((product) => {
-    return { ...product, prices: prices[product.model] };
-  });
+  const totalPrice = shoppingCart
+    .map((product) => {
+      return prices[product.model];
+    })
+    .reduce((a, b) => {
+      return a + b;
+    });
   return totalPrice;
 }
 
