@@ -24,17 +24,21 @@ async function getPost() {
   console.log(filterdData);
 
   filterdData.forEach((post) => {
+    const diveEl = document.createElement("div");
+    diveEl.setAttribute("class", "post");
     const titleEl = document.createElement("p");
     titleEl.setAttribute("class", "title");
     titleEl.innerHTML = `<b>${post.title} </b>`;
     titleEl.style.color = "red";
-    postsEl.appendChild(titleEl);
+    diveEl.appendChild(titleEl);
 
     const bodyEl = document.createElement("p");
     bodyEl.setAttribute("class", "body");
     bodyEl.style.backgroundColor = "lightgrey";
     bodyEl.innerHTML = `${post.body}`;
-    postsEl.appendChild(bodyEl);
+    diveEl.appendChild(bodyEl);
+
+    postsEl.appendChild(diveEl);
 
     titleEl.addEventListener("mouseover", function () {
       bodyEl.style.backgroundColor = "white";
